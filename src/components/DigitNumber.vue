@@ -76,12 +76,17 @@ defineProps(['data', 'color'])
 
 <style scoped lang="sass">
 svg
-  margin: 5px
-  width: 100px
+  margin: 3px
+  width: 50px
 rect, circle
   fill: transparent
   &.active
     // v-bind 把 CSS 值和 Vue 變數綁定
     // https://zh-hk.vuejs.org/api/sfc-css-features.html#v-bind-in-css
     fill: v-bind(color)
+    <!--
+      改svg顏色在這裡
+      https://angel-rs.github.io/css-color-filter-generator/
+     -->
+    filter: brightness(0) saturate(100%) invert(77%) sepia(49%) saturate(524%) hue-rotate(320deg) brightness(103%) contrast(101%);
 </style>
