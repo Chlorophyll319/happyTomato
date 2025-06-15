@@ -3,10 +3,11 @@
     <v-row>
       <v-col cols="12">
         <h1>目前事項</h1>
+        <hr>
         <h2>{{ list.currentItem }}</h2>
         <h2>{{ list.timeleft }}</h2>
         <h2>{{ timeLeftText }}</h2>
-        <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="white" :data="data" />
+        <DigitNumber v-for="(data, i) in timeLeftText" :key="i" color="#fff" :data="data" />
       </v-col>
       <v-col cols="12">
         <!--
@@ -85,6 +86,7 @@ const finish = () => {
   audio.src = settings.selectedAlarm.file
   audio.play()
 
+  // 通知提醒
   const { show, isSupported } = useWebNotification({
     title: '事項完成',
     body: list.currentItem,
